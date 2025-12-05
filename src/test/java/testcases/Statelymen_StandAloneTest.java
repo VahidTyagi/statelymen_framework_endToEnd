@@ -1,8 +1,10 @@
 package testcases;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Statelymen_StandAloneTest {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 
 		System.out.println("Statelymen StandAlone Test executed successfully.");
@@ -34,17 +36,17 @@ public class Statelymen_StandAloneTest {
 		
 		// click on the option for each question and click on next button
 		WebDriverWait wait2= new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait2.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".next-button.button.text-button")));
-		driver.findElement(By.cssSelector(".next-button.button.text-button")).click();
+		wait2.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".next-button.button")));
+		driver.findElement(By.cssSelector(".next-button.button")).click();
 		
-		WebDriverWait wait3= new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait3.until(ExpectedConditions.elementToBeClickable(By.cssSelector("")));	
-		driver.findElement(By.cssSelector("")).click();
+//		WebDriverWait wait3= new WebDriverWait(driver, Duration.ofSeconds(10));
+//		wait3.until(ExpectedConditions.elementToBeClickable(By.cssSelector("")));	
+//		driver.findElement(By.cssSelector("")).click();
 		
 		// What’s got you most excited to try Stately?
 		WebDriverWait wait4= new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait4.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@type='checkbox' and @aria-label='Leveling Up My Style']")));	
-		driver.findElement(By.xpath("//input[@type='checkbox' and @aria-label='Leveling Up My Style']")).click();
+		wait4.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"quiz\"]/div[2]/div[2]/div[2]/div[3]/div/div/fieldset/div/label[2]")));	
+		driver.findElement(By.xpath("//*[@id=\"quiz\"]/div[2]/div[2]/div[2]/div[3]/div/div/fieldset/div/label[2]")).click();
 		
 		// click on the next button 
 		driver.findElement(By.xpath("//button[@id=\"next-button\"]")).click();
@@ -100,16 +102,140 @@ public class Statelymen_StandAloneTest {
 		WebDriverWait wait11= new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait11.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'Like')]")));	
 		driver.findElement(By.xpath("//p[contains(text(),'Like')]")).click();
-		wait11.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'Like')]")));
-		driver.findElement(By.xpath("//p[contains(text(),'Like')]")).click();
-		wait11.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'Like')]")));
-		driver.findElement(By.xpath("//p[contains(text(),'Like')]")).click();
-		wait11.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'Like')]")));
-		driver.findElement(By.xpath("//p[contains(text(),'Like')]")).click();
-		wait11.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'Dislike')]")));
-		driver.findElement(By.xpath("//p[contains(text(),'Dislike')]")).click();
-		wait11.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'Like')]")));
-		driver.findElement(By.xpath("//p[contains(text(),'Like')]")).click();
+		
+		WebDriverWait wait11b= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11b.until(ExpectedConditions.elementToBeClickable(By.xpath("(//p[@class='label'][normalize-space()='Dislike'])[2]")));
+		driver.findElement(By.xpath("(//p[@class='label'][normalize-space()='Dislike'])[2]")).click();
+		
+		WebDriverWait wait11c= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11c.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='Slide 3 of 12']//p[@class='label'][normalize-space()='Like']")));
+		driver.findElement(By.xpath("//div[@aria-label='Slide 3 of 12']//p[@class='label'][normalize-space()='Like']")).click();
+		
+		WebDriverWait wait11d= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11d.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='Slide 4 of 12']//p[@class='label'][normalize-space()='Like']")));
+		driver.findElement(By.xpath("//div[@aria-label='Slide 4 of 12']//p[@class='label'][normalize-space()='Like']")).click();
+		
+		
+		WebDriverWait wait11e= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11e.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='Slide 5 of 12']//p[@class='label'][normalize-space()='Dislike']")));
+		driver.findElement(By.xpath("//div[@aria-label='Slide 5 of 12']//p[@class='label'][normalize-space()='Dislike']")).click();
+		
+		WebDriverWait wait11f= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11f.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='Slide 6 of 12']//p[@class='label'][normalize-space()='Dislike']")));
+		driver.findElement(By.xpath("//div[@aria-label='Slide 6 of 12']//p[@class='label'][normalize-space()='Dislike']")).click();
+		
+		WebDriverWait wait11g= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11g.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='Slide 7 of 12']//p[@class='label'][normalize-space()='Dislike']")));
+		driver.findElement(By.xpath("//div[@aria-label='Slide 7 of 12']//p[@class='label'][normalize-space()='Dislike']")).click();
+		
+		WebDriverWait wait11h= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11h.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='Slide 8 of 12']//p[@class='label'][normalize-space()='Dislike']")));
+		driver.findElement(By.xpath("//div[@aria-label='Slide 8 of 12']//p[@class='label'][normalize-space()='Dislike']")).click();
+		
+		WebDriverWait wait11i= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11i.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='Slide 9 of 12']//p[@class='label'][normalize-space()='Dislike']")));
+		driver.findElement(By.xpath("//div[@aria-label='Slide 9 of 12']//p[@class='label'][normalize-space()='Dislike']")).click();
+		
+		WebDriverWait wait11j= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11j.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='Slide 10 of 12']//p[@class='label'][normalize-space()='Dislike']")));
+		driver.findElement(By.xpath("//div[@aria-label='Slide 10 of 12']//p[@class='label'][normalize-space()='Dislike']")).click();
+		
+		WebDriverWait wait11k= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11k.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='Slide 11 of 12']//p[@class='label'][normalize-space()='Dislike']")));
+		driver.findElement(By.xpath("//div[@aria-label='Slide 11 of 12']//p[@class='label'][normalize-space()='Dislike']")).click();
+		
+		WebDriverWait wait11l= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11l.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@aria-label='Slide 12 of 12']//p[@class='label'][normalize-space()='Dislike']")));
+		driver.findElement(By.xpath("//div[@aria-label='Slide 12 of 12']//p[@class='label'][normalize-space()='Dislike']")).click();
+		
+/*		
+
+		for(int i = 1; i <= 12; i++) {
+
+		    WebDriverWait waitt = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+		    // Identify current visible slide like/dislike
+		    WebElement element;
+
+		    if(i <= 6) {
+		        element = waitt.until(ExpectedConditions.presenceOfElementLocated(
+		            By.xpath("//div[contains(@class,'slider-question') and contains(@class,'swiper-slide-active')]//label[./input[@value='like']]")
+		        ));
+		    } else {
+		        element = waitt.until(ExpectedConditions.presenceOfElementLocated(
+		            By.xpath("//div[contains(@class,'slider-question') and contains(@class,'swiper-slide-active')]//label[./input[@value='dislike']]")
+		        ));
+		    }
+
+		    // Scroll into view (swiper sometimes hides top part)
+		    ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", element);
+
+		    // Force click using JS (bypasses opacity + intercepted click issue)
+		    ((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
+
+		    // Move to next slide
+		    WebElement nextBtn = waitt.until(ExpectedConditions.elementToBeClickable(
+		        By.cssSelector("button.swiper-button-next")
+		    ));
+		    nextBtn.click();
+
+		    Thread.sleep(500);
+		}
+
+
+*/ 
+
+	
+		
+/*		
+		WebDriverWait wait11a= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11a.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"swiper-wrapper-3a810a5729b2ed973\"]/div[1]/fieldset/div/label[2]/p")));
+		driver.findElement(By.xpath("//*[@id=\"swiper-wrapper-658f64d95e27bef8\"]/div[1]/fieldset/div/label[2]/p")).click();
+		
+		WebDriverWait wait11a2= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11a2.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"swiper-wrapper-658f64d95e27bef8\"]/div[2]/fieldset/div/label[2]/p")));
+		driver.findElement(By.xpath("//*[@id=\"swiper-wrapper-658f64d95e27bef8\"]/div[2]/fieldset/div/label[2]/p")).click();
+		
+		WebDriverWait wait11b= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11b.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[3]/fieldset/div/label[2]/p")));
+		driver.findElement(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[3]/fieldset/div/label[2]/p")).click();
+		
+		WebDriverWait wait11c= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11c.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[4]/fieldset/div/label[2]/p")));
+		driver.findElement(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[4]/fieldset/div/label[2]/p")).click();
+		
+		WebDriverWait wait11d= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11d.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[5]/fieldset/div/label[2]/p")));
+		driver.findElement(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[5]/fieldset/div/label[2]/p")).click();
+		
+		WebDriverWait wait11e= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11e.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[6]/fieldset/div/label[2]/p")));
+		driver.findElement(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[6]/fieldset/div/label[2]/p")).click();
+		
+		WebDriverWait wait11f= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11f.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[7]/fieldset/div/label[2]/p")));
+		driver.findElement(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[7]/fieldset/div/label[2]/p")).click();
+		
+		WebDriverWait wait11g= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11g.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[8]/fieldset/div/label[2]/p")));
+		driver.findElement(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[8]/fieldset/div/label[2]/p")).click();
+		
+		WebDriverWait wait11h= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11h.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[9]/fieldset/div/label[2]/p")));
+		driver.findElement(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[9]/fieldset/div/label[2]/p")).click();
+		
+		WebDriverWait wait11i= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11i.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[10]/fieldset/div/label[2]/p")));
+		driver.findElement(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[10]/fieldset/div/label[2]/p")).click();
+		
+		WebDriverWait wait11j= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11j.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[11]/fieldset/div/label[2]/p")));
+		driver.findElement(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[11]/fieldset/div/label[2]/p")).click();
+		
+		WebDriverWait wait11k= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait11k.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[12]/fieldset/div/label[2]/p")));
+		driver.findElement(By.xpath("//*[@id=\"swiper-wrapper-7d27cf2adbf12cdc\"]/div[12]/fieldset/div/label[2]/p")).click();
+*/ 		
 		// click on the next button
 		driver.findElement(By.id("next-button")).click();
 		// click on the next button  
@@ -129,15 +255,22 @@ public class Statelymen_StandAloneTest {
 		
 		WebElement dropdown = driver.findElement(By.xpath("//select[@id='question_32-feet']"));
 		Select select = new Select(dropdown);
-		select.selectByValue("6'");
-		// click on the next button
+		select.selectByValue("5'");
 		
-		WebElement dropdown2 = driver.findElement(By.xpath("//select[@id='question_32-feet']"));
+		
+		WebElement dropdown2 = driver.findElement(By.xpath("//*[@id=\"question_32-inches\"]"));
 		Select select2 = new Select(dropdown2);
-		select2.selectByValue("2");
+
+		for (WebElement opt : select2.getOptions()) {
+		    System.out.println("Value = [" + opt.getAttribute("value") + "] Text = [" + opt.getText() + "]");
+		}
+		select2.selectByValue("10\"");
+		// select2.selectByValue("0\"");
+
+	
 		
-		WebElement dropdown3 = driver.findElement(By.xpath("//select[@id='question_32-weight']"));
-		Select select3 = new Select(dropdown);
+		WebElement dropdown3 = driver.findElement(By.xpath("//*[@id=\"question_33\"]"));
+		Select select3 = new Select(dropdown3);
 		select3.selectByValue("150");
 		
 		// click on the next button
@@ -147,30 +280,28 @@ public class Statelymen_StandAloneTest {
 		
 		// Shirt Fit & Size
 		WebDriverWait wait14= new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait14.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='label checkbutton']/input[@aria-label='Classic']")));	
-		driver.findElement(By.xpath("//div[@class='label checkbutton']/input[@aria-label='Classic']")).click();
+		wait14.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"quiz\"]/div[2]/div[2]/div[14]/div[2]/div/div[1]/div/label[2]/div/div")));	
+		driver.findElement(By.xpath("//*[@id=\"quiz\"]/div[2]/div[2]/div[14]/div[2]/div/div[1]/div/label[2]/div/div")).click();
 		// clcik shirt size 
-		driver.findElement(By.xpath("//label[@aria-label='L']")).click();
+		driver.findElement(By.xpath("//*[@id=\"quiz\"]/div[2]/div[2]/div[14]/div[2]/div/div[2]/fieldset/div[2]/label[3]")).click();
 		// click on the next button
 		driver.findElement(By.id("next-button")).click();
 		
 		
 		// Pant Fit & Size
 		WebDriverWait wait15= new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait15.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input.visually-hidden[value='147']")));	
-		driver.findElement(By.cssSelector("input.visually-hidden[value='147']")).click();
-		driver.findElement(By.cssSelector("label.option.size-option[data-option-id='134']")).click();
+		wait15.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"quiz\"]/div[2]/div[2]/div[15]/div[2]/div/div[1]/div/label[2]/div/div")));	
+		driver.findElement(By.xpath("//*[@id=\"quiz\"]/div[2]/div[2]/div[15]/div[2]/div/div[1]/div/label[2]/div/div")).click();
+		driver.findElement(By.xpath("//*[@id=\"quiz\"]/div[2]/div[2]/div[15]/div[2]/div/div[2]/fieldset/div[2]/label[4]")).click();
 		//insem
-		driver.findElement(By.cssSelector("label.option.size-option[data-option-id='144']")).click();
+		driver.findElement(By.xpath("//*[@id=\"quiz\"]/div[2]/div[2]/div[15]/div[2]/div/div[3]/fieldset/div[2]/label[2]")).click();
 		// click on the next button
 		driver.findElement(By.id("next-button")).click();
 		
 		// shoe size
 		WebDriverWait wait16= new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait16.until(ExpectedConditions.elementToBeClickable(By.cssSelector("label.option.size-option[data-option-id='151']\r\n"
-				+ "")));	
-		driver.findElement(By.cssSelector("label.option.size-option[data-option-id='151']\r\n"
-				+ "")).click();
+		wait16.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"quiz\"]/div[2]/div[2]/div[16]/div[3]/div/div[2]/fieldset/div[2]/label[4]")));	
+		driver.findElement(By.xpath("//*[@id=\"quiz\"]/div[2]/div[2]/div[16]/div[3]/div/div[2]/fieldset/div[2]/label[4]")).click();
 		// click on the next button
 		driver.findElement(By.id("next-button")).click();
 		
@@ -181,12 +312,16 @@ public class Statelymen_StandAloneTest {
 		
 		WebDriverWait wait18= new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait18.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@type='email' and @aria-label='Where can we send your style recommendations?']")));
-		driver.findElement(By.xpath("//input[@type='email' and @aria-label='Where can we send your style recommendations?']")).sendKeys("amaantyagi007@gmail.com");
+		driver.findElement(By.xpath("//input[@type='email' and @aria-label='Where can we send your style recommendations?']")).sendKeys("amaantyagi007a@gmail.com");
+		
 		// click on the next button
+		WebDriverWait wait18b= new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait18b.until(ExpectedConditions.elementToBeClickable(By.id("next-button")));
+		
 		driver.findElement(By.id("next-button")).click();
 		System.out.println("Quiz Process Completed and it's working fine. ");
 		
-		// choose Plan 
+		// choose Plan //*[@id="next-button"]
 		WebDriverWait wait19= new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait19.until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[contains(text(),'LUXE')]")));
 		driver.findElement(By.xpath("//h3[contains(text(),'LUXE')]")).click();
