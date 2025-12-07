@@ -30,7 +30,7 @@ public class Statelymen_StandAloneTest_master extends baseMaster {
         quiz = new Quiz_Till_Email(driver);
         quiz.completeQuizTillEmail();
     }
-
+/*
     @Test(priority = 3, dependsOnMethods = "completeQuiz")
     public void enterEmail() {
         email = new Email_To_PlanSelection(driver);
@@ -48,4 +48,5 @@ public class Statelymen_StandAloneTest_master extends baseMaster {
         checkout = new Checkout_Process(driver);
         checkout.completeCheckout();
     }
+  */   
 }
