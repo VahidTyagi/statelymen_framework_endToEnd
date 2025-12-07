@@ -1,0 +1,8 @@
+testpages\Homepage_Landing.class
+base\baseMaster.class
+testpages\Email_To_PlanSelection.class
+testpages\Quiz_Till_Email.class
+utils\WaitHelper.class
+testpages\Checkout_thankYou.class
+utils\ExtentReportListener.class
+testpages\Checkout_Process.class

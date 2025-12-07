@@ -5,13 +5,13 @@
     <classes>
       <class name="testCasesPackage.Statelymen_StandAloneTest_master">
         <methods>
-          <include name="completeCheckoutProcess"/>
+          <include name="enterEmail"/>
+          <include name="openHomepage"/>
+          <include name="selectPlan"/>
           <include name="setup"/>
+          <include name="completeCheckout"/>
           <include name="tearDown"/>
-          <include name="enterEmailAndSelectPlan"/>
-          <include name="completeQuizTillEmail"/>
-          <include name="launchHomepage"/>
-          <include name="startQuiz"/>
+          <include name="completeQuiz"/>
         </methods>
       </class> <!-- testCasesPackage.Statelymen_StandAloneTest_master -->
     </classes>

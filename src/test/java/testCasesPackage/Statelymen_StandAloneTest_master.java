@@ -3,24 +3,21 @@ package testCasesPackage;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import base.BaseClass;
+import utils.ExtentReportListener;  // <--- correct import
 import testpages.Checkout_Process;
 import testpages.Email_To_PlanSelection;
 import testpages.Homepage_Landing;
 import testpages.Quiz_Till_Email;
-import utils.ExtentReportListener;
+import base.baseMaster;
 
 @Listeners(ExtentReportListener.class)
-public class Statelymen_StandAloneTest_master extends BaseClass {
+public class Statelymen_StandAloneTest_master extends baseMaster {
 
-    Homepage_Landing home;
-    Quiz_Till_Email quiz;
-    Email_To_PlanSelection email;
-    Checkout_Process checkout;
+    private Homepage_Landing home;
+    private Quiz_Till_Email quiz;
+    private Email_To_PlanSelection email;
+    private Checkout_Process checkout;
 
-    // -----------------------------
-    // Step 1 – Open Homepage
-    // -----------------------------
     @Test(priority = 1)
     public void openHomepage() {
         home = new Homepage_Landing(driver);
@@ -28,35 +25,24 @@ public class Statelymen_StandAloneTest_master extends BaseClass {
         home.clickStartQuiz();
     }
 
-    // -----------------------------
-    // Step 2 – Quiz till email
-    // -----------------------------
     @Test(priority = 2, dependsOnMethods = "openHomepage")
     public void completeQuiz() throws Exception {
         quiz = new Quiz_Till_Email(driver);
         quiz.completeQuizTillEmail();
     }
 
-    // -----------------------------
-    // Step 3 – Enter Email
-    // -----------------------------
     @Test(priority = 3, dependsOnMethods = "completeQuiz")
     public void enterEmail() {
         email = new Email_To_PlanSelection(driver);
         email.enterEmailTillPlan();
     }
 
-    // -----------------------------
-    // Step 4 – Select Plan
-    // -----------------------------
     @Test(priority = 4, dependsOnMethods = "enterEmail")
     public void selectPlan() {
+        // Example if plan selection is automated
         System.out.println("Plan selected successfully");
     }
 
-    // -----------------------------
-    // Step 5 – Checkout
-    // -----------------------------
     @Test(priority = 5, dependsOnMethods = "selectPlan")
     public void completeCheckout() throws Exception {
         checkout = new Checkout_Process(driver);

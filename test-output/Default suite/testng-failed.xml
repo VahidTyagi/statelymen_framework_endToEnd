@@ -6,11 +6,11 @@
       <class name="testCasesPackage.Statelymen_StandAloneTest_master">
         <methods>
           <include name="enterEmail"/>
-          <include name="tearDown"/>
           <include name="openHomepage"/>
           <include name="selectPlan"/>
           <include name="setup"/>
           <include name="completeCheckout"/>
+          <include name="tearDown"/>
           <include name="completeQuiz"/>
         </methods>
       </class> <!-- testCasesPackage.Statelymen_StandAloneTest_master -->
