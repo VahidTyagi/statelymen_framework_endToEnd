@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Statelymen Suite">
+
+    <test name="Statelymen Quiz Test">
+        <classes>
+            <class name="testCasesPackage.Statelymen_StandAloneTest_master"/>
+        </classes>
+    </test>
+
+</suite>
